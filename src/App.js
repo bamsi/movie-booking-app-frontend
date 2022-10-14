@@ -3,7 +3,7 @@ import Splash from './components/pages/splash';
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid px-0">
       <Routes>
         <Route path="/" element={<Splash />} />
       </Routes>
