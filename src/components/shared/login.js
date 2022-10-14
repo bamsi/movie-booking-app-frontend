@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 const LoginButton = () => (
-  <button type="button" className="btn btn-success rounded-pill px-5">
-    LOGI IN
-  </button>
+  <Link to="/login" className="btn btn-success rounded-pill px-5">
+    LOG IN
+  </Link>
 );
 
 export default LoginButton;
