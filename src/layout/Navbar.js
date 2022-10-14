@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { GiTriangleTarget } from 'react-icons/gi';
+import logo from '../asserts/logo.png'
+import social_media from '../asserts/social_media.png'
 
 const Navbar = ({ classValue, toggleMenu }) => {
   if(classValue === 'hide') {
@@ -12,7 +14,7 @@ const Navbar = ({ classValue, toggleMenu }) => {
     <nav className={`navbar ${classValue}`}>
       <div className="logo-container">
         <Link to="/">
-          <img src="./asserts/logo.png" className="logo" alt="logo" />
+          <img src={ logo } className="logo" alt="logo" />
         </Link>
       </div>
       <div className="links-container">
@@ -73,7 +75,7 @@ const Navbar = ({ classValue, toggleMenu }) => {
           </li> */}
         </ul>
       </div>
-      {/* <p className="copyright">&copy; Microverse 2022</p> */}
+      <img src={ social_media } className="social_media" alt="social_media" />
       <div className="close-btn-container">
         <GiTriangleTarget className="close-arrow" onClick={() => toggleMenu()} />
       </div>

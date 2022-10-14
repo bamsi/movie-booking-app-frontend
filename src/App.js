@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './layout/Navbar'
 
 function App() {
@@ -15,8 +15,11 @@ function App() {
     }
   };
   return (
-    <div className="App">
-      <Navbar classValue={classValue} toggleMenu={toggleMenu}/>
+    <div>
+      <Navbar
+        classValue={classValue}
+        toggleMenu={toggleMenu}
+      />
     </div>
   );
 }
