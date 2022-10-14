@@ -1,4 +1,4 @@
-import HomeButton from '../shared/homeButton';
+import HomeButton from '../../layout/homeButton';
 
 const Signup = () => (
   <div className="container-img">

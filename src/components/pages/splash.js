@@ -1,5 +1,5 @@
-import LoginButton from '../shared/login';
-import SignupButton from '../shared/signup';
+import LoginButton from '../../layout/login';
+import SignupButton from '../../layout/signup';
 
 const Splash = () => (
   <div className="container-img">
