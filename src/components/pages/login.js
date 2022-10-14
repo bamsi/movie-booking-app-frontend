@@ -1,3 +1,5 @@
+import HomeButton from '../shared/homeButton';
+
 const Login = () => (
   <div className="container-img">
     <div className="d-flex aligns-items-center justify-content-center h-100 d-inline-block">
@@ -16,9 +18,12 @@ const Login = () => (
             <input type="password" className="form-control" id="password" />
           </div>
           <button type="submit" className="btn btn-primary">
-            Submit
+            Log in
           </button>
         </form>
+        <div className="align-self-end">
+          <HomeButton />
+        </div>
       </div>
     </div>
   </div>
