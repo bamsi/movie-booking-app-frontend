@@ -1,0 +1,84 @@
+import PropTypes from 'prop-types';
+import { Link, NavLink } from 'react-router-dom';
+import { GiTriangleTarget } from 'react-icons/gi';
+
+const Navbar = ({ classValue, toggleMenu }) => {
+  if(classValue === 'hide') {
+    return (
+      <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars" /></div>
+    );
+  }
+  return (
+    <nav className={`navbar ${classValue}`}>
+      <div className="logo-container">
+        <Link to="/">
+          <img src="./asserts/logo.png" className="logo" alt="logo" />
+        </Link>
+      </div>
+      <div className="links-container">
+        <ul>
+          <li>
+            <NavLink
+              className={(navData) => (navData.isActive ? 'active link' : 'link')}
+              to="/">
+              Latest Movies
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={(navData) => (navData.isActive ? 'active link' : 'link')}
+              to="/genres"
+            >
+              Genres
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={(navData) => (navData.isActive ? 'active link' : 'link')}
+              to="/trending_movies"
+            >
+              Trending Movies
+            </NavLink>
+          </li>
+          {
+            name === 'admin'
+              ? (
+                <div>
+                  <li>
+                    <NavLink
+                      className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                      to="/add_movie"
+                    >
+                      Add A Movie
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                      to="/delete_movie"
+                    >
+                      Delete A Movie
+                    </NavLink>
+                  </li>
+                </div>
+              )
+              : null
+          }
+
+          <li className="nav-logout">
+            <i className="fa-solid fa-right-from-bracket" />
+            <a href="/" className="nav-link text-white" onClick={logOut}>
+              LogOut
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p className="copyright">&copy; Microverse 2022</p>
+      <div className="close-btn-container">
+        <GiTriangleTarget className="close-arrow" onClick={() => toggleMenu()} />
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
