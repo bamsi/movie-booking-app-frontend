@@ -8,10 +8,9 @@ const initialState = {
 
 const baseUrl = 'http://127.0.0.1:3000';
 
-const readUser = () =>
-  localStorage.getItem('user')
-    ? JSON.parse(localStorage.getItem('user'))
-    : null;
+const readUser = () => (localStorage.getItem('user')
+  ? JSON.parse(localStorage.getItem('user'))
+  : null);
 
 const loggedIn = () => {
   if (readUser() != null) {
