@@ -40,7 +40,7 @@ const Navbar = ({ classValue, toggleMenu }) => {
               Trending Movies
             </NavLink>
           </li>
-          {
+          {/* {
             name === 'admin'
               ? (
                 <div>
@@ -63,17 +63,17 @@ const Navbar = ({ classValue, toggleMenu }) => {
                 </div>
               )
               : null
-          }
+          } */}
 
-          <li className="nav-logout">
+          {/* <li className="nav-logout">
             <i className="fa-solid fa-right-from-bracket" />
             <a href="/" className="nav-link text-white" onClick={logOut}>
               LogOut
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
-      <p className="copyright">&copy; Microverse 2022</p>
+      {/* <p className="copyright">&copy; Microverse 2022</p> */}
       <div className="close-btn-container">
         <GiTriangleTarget className="close-arrow" onClick={() => toggleMenu()} />
       </div>
