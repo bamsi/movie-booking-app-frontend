@@ -82,3 +82,8 @@ const Navbar = ({ classValue, toggleMenu }) => {
 };
 
 export default Navbar;
+
+Navbar.propTypes = {
+  classValue: PropTypes.string.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
+};
