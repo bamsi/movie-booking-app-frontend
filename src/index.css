@@ -113,3 +113,11 @@ body {
   bottom: 1rem;
   padding: 0 1rem;
 }
+
+.bars {
+  padding: 40px 0 0 55px;
+}
+
+.bars3 {
+  font-size: 35px;
+}

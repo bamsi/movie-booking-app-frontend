@@ -7,7 +7,7 @@ import social_media from '../asserts/social_media.png'
 const Navbar = ({ classValue, toggleMenu }) => {
   if(classValue === 'hide') {
     return (
-      <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars" /></div>
+      <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars bars3" /></div>
     );
   }
   return (
