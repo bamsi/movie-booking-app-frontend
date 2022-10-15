@@ -41,20 +41,17 @@ const login = async (payload) => {
     },
     body: payload,
   };
-  try {
-    const response = await fetch(requestConfig.url, {
-      method: requestConfig.method,
-      headers: requestConfig.headers,
-      body: JSON.stringify(requestConfig.body),
-    });
-    if (!response.ok) {
-      throw new Error('Request failed!');
-    }
-    const obj = await response.json();
+
+  const response = await fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  });
+  const obj = await response.json();
+  if (response.ok) {
     localStorage.setItem('user', JSON.stringify(obj.data));
-  } catch (err) {
-    throw new Error(err);
   }
+  return { status: response.status, data: obj };
 };
 
 export { login, loggedIn, logout };

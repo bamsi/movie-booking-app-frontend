@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, loggedIn } from '../../redux/authentication/authentication';
+import { login } from '../../redux/authentication/authentication';
 import HomeButton from '../../layout/homeButton';
 
 const Login = () => {
@@ -27,21 +27,18 @@ const Login = () => {
 
   const submitRequest = (event) => {
     event.preventDefault();
-    try {
-      const response = login({
-        name: values.username,
-        password: values.password,
-      });
-      response.then(() => {
-        if (loggedIn()) {
-          navigate('/home');
-        } else {
-          navigate('/');
-        }
-      });
-    } catch (err) {
-      setError('Login Failed');
-    }
+
+    const response = login({
+      name: values.username,
+      password: values.password,
+    });
+    response.then((response) => {
+      if (response.status !== 200) {
+        setError('Invalid username and password');
+      } else {
+        navigate('/home');
+      }
+    });
   };
 
   return (
@@ -49,8 +46,8 @@ const Login = () => {
       <div className="d-flex aligns-items-center justify-content-center h-100 d-inline-block">
         <div className="card align-self-center p-4" style={{ width: '28rem' }}>
           {error && (
-            <div className="alert alert-primary" role="alert">
-              {{ error }}
+            <div className="alert alert-danger" role="alert">
+              {error}
             </div>
           )}
           <form onSubmit={submitRequest}>
