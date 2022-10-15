@@ -6,7 +6,7 @@ import Signup from './components/pages/signup';
 import Navbar from './layout/Navbar';
 
 function App() {
-  const [classValue, setClassValue] = useState('show');
+  const [classValue, setClassValue] = useState('hide');
   // const [showNav, setShowNav] = useState('block');
   const toggleMenu = () => {
     if (classValue === 'show') {
