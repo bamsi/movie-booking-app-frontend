@@ -27,6 +27,7 @@ body {
 .sidebar-container {
   display: flex;
   align-items: flex-end;
+
   /* position: absolute; */
 }
 
@@ -137,13 +138,13 @@ body {
   text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
 }
 
-/*App styling*/
+/* App styling */
 
 .main-container {
   display: flex;
 }
 
 .main-section {
-  width: 105%!important;
+  width: 105% !important;
   margin-left: -60px;
 }
