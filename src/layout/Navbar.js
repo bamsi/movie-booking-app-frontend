@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { GiTriangleTarget } from 'react-icons/gi';
-import logo from '../asserts/logo.png'
-import social_media from '../asserts/social_media.png'
+import logo from '../asserts/logo.png';
+import SocialMedia from '../asserts/social_media.png';
 
 const Navbar = ({ classValue, toggleMenu }) => {
-  if(classValue === 'hide') {
+  if (classValue === 'hide') {
     return (
       <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars bars3" /></div>
     );
@@ -15,7 +15,7 @@ const Navbar = ({ classValue, toggleMenu }) => {
       <nav className={`navbar ${classValue}`}>
         <div className="logo-container">
           <Link to="/">
-            <img src={ logo } className="logo" alt="logo" />
+            <img src={logo} className="logo" alt="logo" />
           </Link>
         </div>
         <div className="links-container">
@@ -23,7 +23,8 @@ const Navbar = ({ classValue, toggleMenu }) => {
             <li>
               <NavLink
                 className={(navData) => (navData.isActive ? 'active link' : 'link')}
-                to="/">
+                to="/"
+              >
                 Latest Movies
               </NavLink>
             </li>
@@ -76,10 +77,10 @@ const Navbar = ({ classValue, toggleMenu }) => {
             </li> */}
           </ul>
         </div>
-        <img src={ social_media } className="social_media" alt="social_media" />
+        <img src={SocialMedia} className="social_media" alt="social_media" />
       </nav>
-      <div className="close-btn-container" onClick={() => toggleMenu()}>
-        <GiTriangleTarget className="close-arrow" />
+      <div className="close-btn-container">
+        <GiTriangleTarget className="close-arrow" onClick={() => toggleMenu()} />
       </div>
     </div>
   );

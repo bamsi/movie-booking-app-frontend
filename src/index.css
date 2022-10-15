@@ -4,7 +4,7 @@
   --light-green: #97bf0f;
   --blue: #48bab5;
   --dark-green: #617c00;
-  --grey: #333333,
+  --grey: #333,;
   --orange: #f5c702;
   --black: #111;
   --main-white: #fff;
@@ -32,7 +32,6 @@ body {
   width: 380px;
   height: 100vh;
   border-right: 0.4px solid rgba(142, 142, 142, 0.2);
-  position: fixed;
   display: block;
   top: 0;
   left: 0;
@@ -54,10 +53,6 @@ body {
   margin: 0 auto;
 }
 
-/* .navbar ul li {
-  margin: 1rem 0;
-} */
-
 .nav-logout li a {
   color: #fff !important;
 }
@@ -67,7 +62,7 @@ body {
   text-decoration: none;
   font-family: 'Passion One', cursive;
   font-weight: 400;
-  color: #333333;
+  color: #333;
   text-transform: uppercase;
   padding: 8px 0 8px 25px;
   width: 100%;
