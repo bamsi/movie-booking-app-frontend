@@ -1,10 +1,19 @@
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GiTriangleTarget } from 'react-icons/gi';
 import logo from '../asserts/logo.png';
 import SocialMedia from '../asserts/social_media.png';
 
-const Navbar = ({ classValue, toggleMenu }) => {
+const Navbar = () => {
+  const [classValue, setClassValue] = useState('hide');
+  const toggleMenu = () => {
+    if (classValue === 'show') {
+      setClassValue('hide');
+    } else {
+      setClassValue('show');
+    }
+  };
+
   if (classValue === 'hide') {
     return (
       <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars bars3" /></div>
@@ -88,7 +97,7 @@ const Navbar = ({ classValue, toggleMenu }) => {
 
 export default Navbar;
 
-Navbar.propTypes = {
-  classValue: PropTypes.string.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
-};
+// Navbar.propTypes = {
+//   classValue: PropTypes.string.isRequired,
+//   toggleMenu: PropTypes.func.isRequired,
+// };
