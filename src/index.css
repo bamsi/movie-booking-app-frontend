@@ -27,7 +27,7 @@ body {
 .sidebar-container {
   display: flex;
   align-items: flex-end;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .navbar {
@@ -85,6 +85,7 @@ body {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   margin-bottom: 60px;
+  z-index: 1;
 }
 
 .close-arrow {
@@ -134,4 +135,15 @@ body {
   font-size: 7rem;
   color: #fff;
   text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
+}
+
+/*App styling*/
+
+.main-container {
+  display: flex;
+}
+
+.main-section {
+  width: 105%!important;
+  margin-left: -60px;
 }

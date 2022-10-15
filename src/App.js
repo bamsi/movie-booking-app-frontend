@@ -10,7 +10,7 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <div className="container-fluid px-0">
+      <div className="container-fluid px-0 main-section">
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/login" element={<Login />} />
