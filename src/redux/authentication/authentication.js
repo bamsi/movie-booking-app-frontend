@@ -1,12 +1,10 @@
-import axios from 'axios';
-
 const LOGIN = 'movie/authentication/LOGIN';
 
 const initialState = {
   user: {},
 };
 
-const baseUrl = 'http://127.0.0.1:3000';
+const baseUrl = 'http://127.0.0.1:3000/api/v1';
 
 const readUser = () => (localStorage.getItem('user')
   ? JSON.parse(localStorage.getItem('user'))
@@ -22,11 +20,6 @@ const loggedIn = () => {
 const logout = () => {
   localStorage.removeItem('user');
 };
-/** define actions */
-const loginSuccess = (data) => ({
-  type: LOGIN,
-  data,
-});
 
 const auths = (state = initialState, action) => {
   switch (action.type) {
@@ -39,21 +32,29 @@ const auths = (state = initialState, action) => {
   }
 };
 
-const login = (data) => (dispatch) => {
-  axios
-    .post({
-      method: 'post',
-      url: `${baseUrl}/login`,
-      data,
-    })
-    .then((response) => {
-      const { data } = response;
-      localStorage.setItem('user', JSON.stringify(data));
-      dispatch(loginSuccess(data));
-    })
-    .catch((error) => {
-      throw new Error(error);
+const login = async (payload) => {
+  const requestConfig = {
+    url: `${baseUrl}/login`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: payload,
+  };
+  try {
+    const response = await fetch(requestConfig.url, {
+      method: requestConfig.method,
+      headers: requestConfig.headers,
+      body: JSON.stringify(requestConfig.body),
     });
+    if (!response.ok) {
+      throw new Error('Request failed!');
+    }
+    const obj = await response.json();
+    localStorage.setItem('user', JSON.stringify(obj.data));
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 export { login, loggedIn, logout };

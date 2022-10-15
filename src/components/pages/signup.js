@@ -3,7 +3,7 @@ import HomeButton from '../../layout/homeButton';
 const Signup = () => (
   <div className="container-img">
     <div className="d-flex aligns-items-center justify-content-center h-100 d-inline-block">
-      <div className="card align-self-center w-25 p-4">
+      <div className="card align-self-center p-4" style={{ width: '28rem' }}>
         <form>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">
