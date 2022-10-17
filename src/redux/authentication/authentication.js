@@ -54,5 +54,30 @@ const login = async (payload) => {
   return { status: response.status, data: obj };
 };
 
-export { login, loggedIn, logout };
+const signup = async (payload) => {
+  const requestConfig = {
+    url: `${baseUrl}/users`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: payload,
+  };
+
+  fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  }).then((response) => {
+    const obj = response.json();
+    if (response.ok) {
+      localStorage.setItem('user', JSON.stringify(obj.data));
+    }
+    return { status: response.status, data: obj };
+  });
+};
+
+export {
+  login, loggedIn, logout, signup,
+};
 export default auths;

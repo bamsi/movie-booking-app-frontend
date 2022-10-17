@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signup } from '../../redux/authentication/authentication';
 import HomeButton from '../../layout/homeButton';
 
 const Signup = () => {
@@ -13,12 +14,21 @@ const Signup = () => {
 
   const submitRequest = (event) => {
     event.preventDefault();
-    const response = {
+    const payload = {
       name: values.username,
       password: values.password,
     };
     if (values.password === values.retypePassword) {
-      navigate('/home');
+      const response = signup(payload);
+      response.then((data) => {
+        if (data.status !== 200) {
+          setError('Failed to register user');
+        } else {
+          navigate('/home');
+        }
+      });
+    } else {
+      setError('Password does not match!');
     }
   };
 
@@ -37,10 +47,6 @@ const Signup = () => {
   };
 
   const handleRetypePasswordChange = (e) => {
-    const retypePassword = e.target.value;
-    if (retypePassword !== values.password) {
-      setError('Password does not match!');
-    }
     setValues({
       ...values,
       retypePassword: e.target.value,
