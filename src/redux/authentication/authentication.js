@@ -39,7 +39,7 @@ const login = async (payload) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: payload,
+    body: { user: payload },
   };
 
   const response = await fetch(requestConfig.url, {
@@ -61,7 +61,7 @@ const signup = async (payload) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: payload,
+    body: { user: payload },
   };
 
   fetch(requestConfig.url, {
