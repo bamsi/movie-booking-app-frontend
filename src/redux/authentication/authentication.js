@@ -32,6 +32,8 @@ const auths = (state = initialState, action) => {
   }
 };
 
+const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
+
 const login = async (payload) => {
   const requestConfig = {
     url: `${baseUrl}/login`,
@@ -49,7 +51,7 @@ const login = async (payload) => {
   });
   const obj = await response.json();
   if (response.ok) {
-    localStorage.setItem('user', JSON.stringify(obj.data));
+    localStorage.setItem('user', JSON.stringify(obj));
   }
   return { status: response.status, data: obj };
 };
@@ -71,13 +73,13 @@ const signup = async (payload) => {
   }).then((response) => {
     const obj = response.json();
     if (response.ok) {
-      localStorage.setItem('user', JSON.stringify(obj.data));
+      localStorage.setItem('user', JSON.stringify(obj));
     }
     return { status: response.status, data: obj };
   });
 };
 
 export {
-  login, loggedIn, logout, signup,
+  login, loggedIn, logout, signup, getCurrentUser,
 };
 export default auths;

@@ -46,5 +46,24 @@ const fetchMovies = (page) => async (dispatch) => {
   }
 };
 
-export { fetchMovies };
+const addMovie = async (payload) => {
+  const requestConfig = {
+    url: `${baseUrl}/movies`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: payload,
+  };
+
+  const response = await fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  });
+  const obj = await response.json();
+  return { status: response.status, data: obj };
+};
+
+export { fetchMovies, addMovie };
 export default movies;
