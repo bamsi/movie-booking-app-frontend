@@ -10,11 +10,15 @@ const Main = () => {
     if (!movies.length) dispatch(fetchMovies(1));
   }, []);
   return (
-    <>
-      <h1>Latest Movies</h1>
+    <div className="container pt-5">
+      <div className="text-center mb-5">
+        <h1 className="fw-bold">Latest Movies</h1>
+        <p>Most watched latest movies on Movie Bisko.</p>
+      </div>
+
       <div className="row">
         {movies.map((movie) => (
-          <div className="col" key={movie.id}>
+          <div className="col-12 col-md-4" key={movie.id}>
             <MovieItem
               id={movie.id}
               title={movie.title}
@@ -24,7 +28,7 @@ const Main = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
