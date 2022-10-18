@@ -4,6 +4,7 @@ import Login from './components/pages/login';
 import Signup from './components/pages/signup';
 import Navbar from './layout/Navbar';
 import Main from './components/movies/main';
+import AddMovie from './components/movies/addMovie';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
+          <Route path="/add_movie" element={<AddMovie />} />
         </Routes>
       </div>
     </div>
