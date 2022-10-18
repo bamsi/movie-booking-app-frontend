@@ -98,6 +98,37 @@ body {
   margin-top: -10px;
 }
 
+.next-button {
+  transform: rotate(90deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.prev-button {
+  transform: rotate(30deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.arrow-container {
+  text-align: end;
+  width: 60px;
+  height: 50px;
+  padding: 15px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #838482;
+}
+
+.arrow-container .active {
+  cursor: pointer;
+  background: #97bf0f;
+}
+
 .social_media {
   position: absolute;
   bottom: 25px;
@@ -120,7 +151,7 @@ body {
 
 .bars3 {
   font-size: 35px;
-  color: #fff;
+  color: #97bf0f;
 }
 
 .container-img {
