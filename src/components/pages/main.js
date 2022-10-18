@@ -1,7 +1,13 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMovies } from '../../redux/movie/movies';
 
 const Main = () => {
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.movies.list);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!movies.length) dispatch(fetchMovies(1));
+  }, []);
   return (
     <>
       <h1>Latest Movies</h1>
@@ -9,7 +15,7 @@ const Main = () => {
         {movies.map((movie) => (
           <div className="col" key={movie.id}>
             Movie item:
-            {movie.name}
+            {movie.title}
           </div>
         ))}
       </div>
