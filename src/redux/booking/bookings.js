@@ -34,3 +34,5 @@ const fetchBookings = () => async (dispatch) => {
     dispatch(fetchAllBookings(obj));
   }
 }
+
+export default fetchBookings;
