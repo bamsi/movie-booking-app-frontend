@@ -27,6 +27,7 @@ body {
 .sidebar-container {
   display: flex;
   align-items: flex-end;
+
   /* position: absolute; */
 }
 

@@ -22,7 +22,7 @@ const Navbar = () => {
     );
   }
   return (
-    <div className="d-none d-md-block">
+    <div className="d-none d-md-flex">
       <div className="sidebar-container">
         <nav className={`navbar ${classValue}`}>
           <div className="logo-container">
