@@ -3,7 +3,7 @@ import Splash from './components/pages/splash';
 import Login from './components/pages/login';
 import Signup from './components/pages/signup';
 import Navbar from './layout/Navbar';
-import Main from './components/pages/main';
+import Main from './components/movies/main';
 
 function App() {
   return (
