@@ -5,6 +5,8 @@ import Signup from './components/pages/signup';
 import Navbar from './layout/Navbar';
 import Main from './components/movies/main';
 import AddMovie from './components/movies/addMovie';
+import MovieBookings from './components/bookings/MovieBookings';
+import NewBooking from './components/bookings/NewBooking';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
           <Route path="/add_movie" element={<AddMovie />} />
+          <Route path="/bookings" element={<MovieBookings />} />
+          <Route path="/new_booking" element={<NewBooking />} />
         </Routes>
       </div>
     </div>
