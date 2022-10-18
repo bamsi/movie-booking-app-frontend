@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBookingAction, fetchData } from '../../redux/booking-redux/booking';
-//import './css/appointment.css';
+// import './css/appointment.css';
 
 const Bookings = () => {
   const dispatch = useDispatch();
