@@ -12,8 +12,16 @@ const Main = () => {
   useEffect(() => {
     if (!movies.length) dispatch(fetchMovies(1));
   }, []);
-  const prevPage = () => {};
-  const nextPage = () => {};
+  const prevPage = () => {
+    if (prev != null) {
+      dispatch(fetchMovies(prev));
+    }
+  };
+  const nextPage = () => {
+    if (next != null) {
+      dispatch(fetchMovies(next));
+    }
+  };
 
   return (
     <div className="container pt-5">

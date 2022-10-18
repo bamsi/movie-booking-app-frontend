@@ -124,11 +124,6 @@ body {
   background: #838482;
 }
 
-.arrow-container .active {
-  cursor: pointer;
-  background: #97bf0f;
-}
-
 .social_media {
   position: absolute;
   bottom: 25px;
@@ -142,6 +137,7 @@ body {
 .active {
   background-color: var(--light-green);
   color: var(--main-white) !important;
+  cursor: pointer;
 }
 
 .bars {
