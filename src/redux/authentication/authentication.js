@@ -32,6 +32,8 @@ const auths = (state = initialState, action) => {
   }
 };
 
+const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
+
 const login = async (payload) => {
   const requestConfig = {
     url: `${baseUrl}/login`,
@@ -39,7 +41,7 @@ const login = async (payload) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: payload,
+    body: { user: payload },
   };
 
   const response = await fetch(requestConfig.url, {
@@ -49,10 +51,35 @@ const login = async (payload) => {
   });
   const obj = await response.json();
   if (response.ok) {
-    localStorage.setItem('user', JSON.stringify(obj.data));
+    localStorage.setItem('user', JSON.stringify(obj));
   }
   return { status: response.status, data: obj };
 };
 
-export { login, loggedIn, logout };
+const signup = async (payload) => {
+  const requestConfig = {
+    url: `${baseUrl}/users`,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: { user: payload },
+  };
+
+  fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  }).then((response) => {
+    const obj = response.json();
+    if (response.ok) {
+      localStorage.setItem('user', JSON.stringify(obj));
+    }
+    return { status: response.status, data: obj };
+  });
+};
+
+export {
+  login, loggedIn, logout, signup, getCurrentUser,
+};
 export default auths;
