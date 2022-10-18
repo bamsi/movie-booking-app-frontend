@@ -21,6 +21,7 @@ const Signup = () => {
     if (values.password === values.retypePassword) {
       const response = signup(payload);
       response.then((data) => {
+        console.log(data);
         if (data.status !== 200) {
           setError('Failed to register user');
         } else {

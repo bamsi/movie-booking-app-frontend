@@ -66,17 +66,16 @@ const signup = async (payload) => {
     body: { user: payload },
   };
 
-  fetch(requestConfig.url, {
+  const response = await fetch(requestConfig.url, {
     method: requestConfig.method,
     headers: requestConfig.headers,
     body: JSON.stringify(requestConfig.body),
-  }).then((response) => {
-    const obj = response.json();
-    if (response.ok) {
-      localStorage.setItem('user', JSON.stringify(obj));
-    }
-    return { status: response.status, data: obj };
   });
+  const obj = response.json();
+  if (response.ok) {
+    localStorage.setItem('user', JSON.stringify(obj));
+  }
+  return { status: response.status, data: obj };
 };
 
 export {
