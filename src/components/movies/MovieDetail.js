@@ -2,12 +2,13 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { selectMovie } from '../../redux/movie/movie-detail';
 import './movieDetail.css';
 
 function MovieDetail() {
   const movie = useSelector((state) => state.movie);
-  console.log(movie);
+  // console.log(movie);
   const movieId = useParams();
   const dispatch = useDispatch();
   // console.log(movieId.movieId);
@@ -58,12 +59,12 @@ function MovieDetail() {
                   <span className="fa fa-star" />
                 </div>
                 <h4 className="review-no">
-                  {' '}
-                  time:
+
+                  Time:
                   {movie.time}
                 </h4>
                 <h4 className="review-no">
-                  {' '}
+
                   Duration:
                   {movie.duration}
                 </h4>
@@ -72,13 +73,13 @@ function MovieDetail() {
               <p className="product-description">{movie.description}</p>
               <p className="vote">
                 <strong>91%</strong>
-                {' '}
-                of buyers enjoyed this product!
-                {' '}
+                of buyers enjoyed this Movie!
                 <strong>(87 votes)</strong>
               </p>
               <div className="action">
-                <button className="add-to-cart btn btn-default" type="button">Back To Movies</button>
+                <Link to="/home">
+                  <button className="add-to-cart btn btn-default" type="button">Back To Movies</button>
+                </Link>
               </div>
             </div>
           </div>
