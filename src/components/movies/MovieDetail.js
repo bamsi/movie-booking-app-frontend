@@ -8,12 +8,12 @@ function MovieDetail() {
   const movie = useSelector((state) => state.movie);
   console.log(movie);
   console.log('movie');
-  const movietID = useParams();
+  const movieId = useParams();
   const dispatch = useDispatch();
-  console.log(movietID);
+  console.log(movieId.movieId);
 
   const fetchMovie = async () => {
-    const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movietID}`).catch((err) => {
+    const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`).catch((err) => {
       console.log('Error', err);
     });
     dispatch(selectMovie(response));
