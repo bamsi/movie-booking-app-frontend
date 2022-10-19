@@ -5,7 +5,7 @@
   --light-green: #97bf0f;
   --blue: #48bab5;
   --dark-green: #617c00;
-  --grey: #333,;
+  --grey: #333;
   --orange: #f5c702;
   --black: #111;
   --main-white: #fff;
@@ -82,10 +82,12 @@ body {
   background: #97bf0f;
   width: 60px;
   padding: 15px;
-  padding: 10px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  margin-bottom: 60px;
+  position: fixed;
+  bottom: 8rem;
+  left: 380px;
+  cursor: pointer;
   z-index: 1;
 }
 
@@ -95,6 +97,32 @@ body {
   height: 25px;
   color: white;
   margin-top: -10px;
+}
+
+.next-button {
+  transform: rotate(90deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.prev-button {
+  transform: rotate(30deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.arrow-container {
+  text-align: end;
+  width: 60px;
+  height: 50px;
+  padding: 15px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #838482;
 }
 
 .social_media {
@@ -110,6 +138,7 @@ body {
 .active {
   background-color: var(--light-green);
   color: var(--main-white) !important;
+  cursor: pointer;
 }
 
 .bars {
@@ -119,7 +148,7 @@ body {
 
 .bars3 {
   font-size: 35px;
-  color: #fff;
+  color: #97bf0f;
 }
 
 .container-img {
@@ -142,9 +171,4 @@ body {
 
 .main-container {
   display: flex;
-}
-
-.main-section {
-  width: 105% !important;
-  margin-left: -60px;
 }

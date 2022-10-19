@@ -5,6 +5,7 @@ import Signup from './components/pages/signup';
 import Navbar from './layout/Navbar';
 import Main from './components/movies/main';
 import AddMovie from './components/movies/addMovie';
+import MovieDetail from './components/movies/MovieDetail';
 
 function App() {
   return (
@@ -12,13 +13,15 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <div className="container-fluid px-0 main-section">
+      <div className="container-fluid px-0">
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
           <Route path="/add_movie" element={<AddMovie />} />
+          <Route path="/movie_detail" element={<MovieDetail />} />
+
         </Routes>
       </div>
     </div>
