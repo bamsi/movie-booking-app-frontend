@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBookings } from '../../redux/booking/bookings';
+import { getCurrentUser } from '../../redux/authentication/authentication';
 
 function MovieBookings() {
   const bookings = useSelector((state) => state.bookings.list);
+
+  const user = getCurrentUser();
+  const userId = user.user.id;
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBookings());
+    dispatch(fetchBookings(userId));
   }, []);
 
   return (

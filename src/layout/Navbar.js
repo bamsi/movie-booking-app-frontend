@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GiTriangleTarget } from 'react-icons/gi';
+import { useDispatch } from 'react-redux';
 import logo from '../asserts/logo.png';
 import SocialMedia from '../asserts/social_media.png';
+import { loggedIn, logout } from '../redux/authentication/authentication';
 
 const Navbar = () => {
   const [classValue, setClassValue] = useState('hide');
+  const dispatch = useDispatch();
   const toggleMenu = () => {
     if (classValue === 'show') {
       setClassValue('hide');
@@ -13,6 +16,10 @@ const Navbar = () => {
       setClassValue('show');
     }
   };
+
+  const logOut = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
   if (classValue === 'hide') {
     return (
@@ -53,8 +60,16 @@ const Navbar = () => {
                 Trending Movies
               </NavLink>
             </li>
-            {/* {
-              name === 'admin'
+            <li>
+              <NavLink
+                className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                to="/new_booking"
+              >
+                New Booking
+              </NavLink>
+            </li>
+            {
+              loggedIn === true
                 ? (
                   <div>
                     <li>
@@ -74,16 +89,13 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                   </div>
-                )
-                : null
-            } */}
-
-            {/* <li className="nav-logout">
-              <i className="fa-solid fa-right-from-bracket" />
+                ) : null
+            }
+            <li className="nav-logout">
               <a href="/" className="nav-link text-white" onClick={logOut}>
                 LogOut
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
         <img src={SocialMedia} className="social_media" alt="social_media" />
@@ -96,8 +108,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// Navbar.propTypes = {
-//   classValue: PropTypes.string.isRequired,
-//   toggleMenu: PropTypes.func.isRequired,
-// };

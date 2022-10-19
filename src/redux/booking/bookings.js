@@ -1,5 +1,3 @@
-import { getCurrentUser } from '../authentication/authentication';
-
 const FETCH_BOOKINGS = 'booking/bookings/FETCH_BOOKINGS';
 const BOOK_MOVIE = 'booking/bookings/BOOK_MOVIE';
 
@@ -8,9 +6,6 @@ const baseUrl = 'http://127.0.0.1:3000/api/v1';
 const initialState = {
   list: [],
 };
-
-const user = getCurrentUser();
-const userId = user.user.id;
 
 const fetchAllBookings = (data) => ({
   type: FETCH_BOOKINGS,
@@ -22,7 +17,7 @@ const createBooking = (data) => ({
   data,
 });
 
-const fetchBookings = () => async (dispatch) => {
+const fetchBookings = (userId) => async (dispatch) => {
   const requestConfig = {
     url: `${baseUrl}/users/${userId}/bookings`,
     method: 'GET',
@@ -58,7 +53,7 @@ const fetchBookings = () => async (dispatch) => {
 
 const makeBooking = (payload) => async (dispatch) => {
   const requestConfig = {
-    url: `${baseUrl}/${userId}/bookings`,
+    url: `${baseUrl}/users/${payload.user_id}/bookings`,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -85,8 +80,7 @@ const bookings = (state = initialState, action) => {
       };
     case BOOK_MOVIE:
       return {
-        ...state,
-        list: action.data,
+        list: [...state.list, action.data],
       };
     default:
       return state;
