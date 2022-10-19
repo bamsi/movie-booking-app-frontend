@@ -1,19 +1,16 @@
 const SELECTED_MOVIE = 'movie/movies/SELECTED_MOVIE';
 
-const initialState = {
-  list: [],
-};
-
-export const selectMovie = (data) => ({
+export const selectMovie = (movie) => ({
   type: SELECTED_MOVIE,
-  data,
+  payload: movie,
 });
 
-const movie = (state = initialState, action) => {
-  switch (action.type) {
+const movie = (state = {}, { type, payload }) => {
+  // console.log(payload);
+  switch (type) {
     case SELECTED_MOVIE:
       return {
-        list: action.data.data,
+        state, payload,
       };
     default:
       return state;

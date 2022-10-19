@@ -6,8 +6,7 @@ import { selectMovie } from '../../redux/movie/movie-detail';
 
 function MovieDetail() {
   const movie = useSelector((state) => state.movie);
-  console.log(movie);
-  console.log('movie');
+  console.log(movie.payload);
   const movieId = useParams();
   const dispatch = useDispatch();
   console.log(movieId.movieId);
@@ -16,7 +15,8 @@ function MovieDetail() {
     const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`).catch((err) => {
       console.log('Error', err);
     });
-    dispatch(selectMovie(response));
+    dispatch(selectMovie(response.data));
+    console.log(response.data);
   };
 
   useEffect(() => {
