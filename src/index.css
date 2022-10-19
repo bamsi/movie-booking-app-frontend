@@ -22,6 +22,10 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 /* navbar */
 
 .sidebar-container {
@@ -81,7 +85,6 @@ body {
   text-align: end;
   background: #97bf0f;
   width: 60px;
-  padding: 15px;
   padding: 10px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -115,11 +118,12 @@ body {
 .bars {
   padding: 40px 0 0 55px;
   position: absolute;
+  
 }
 
 .bars3 {
   font-size: 35px;
-  color: #fff;
+  color: #97bf0f;
 }
 
 .container-img {
@@ -138,6 +142,23 @@ body {
   text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* New Bookings */
+.booking-img {
+  width: 100%;
+}
+
+.booking-box {
+  margin: 0 auto;
+}
+
+.delete-booking {
+  background: #97bf0f;
+  padding: 5px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+}
+
 /* App styling */
 
 .main-container {
@@ -146,4 +167,6 @@ body {
 
 .main-section {
   width: 100% !important;
+  overflow-y: scroll;
+  height: 100vh;
 }

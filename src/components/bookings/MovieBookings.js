@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBookings } from '../../redux/booking/bookings';
+import { fetchBookings, deleteBooking } from '../../redux/booking/bookings';
 import { getCurrentUser } from '../../redux/authentication/authentication';
 
 function MovieBookings() {
@@ -14,6 +14,11 @@ function MovieBookings() {
     dispatch(fetchBookings(userId));
   }, []);
 
+  const deleteBookedMovie = (e, id) => {
+    dispatch(deleteBooking(userId, id));
+    e.target.parentNode.remove();
+  };
+
   return (
     <div className="my-booking-container">
 
@@ -26,15 +31,18 @@ function MovieBookings() {
           <h2 className="not-found-notice mt-5 text-center">No booked movies</h2>
         )
         : (
-          <div className="booking-box py-3">
+          <div className="booking-box row container">
             {bookings.map((booking) => (
-              <div className="my-booking-card container" key={booking.bookingId}>
-                <div className="d-flex ustify-content-evenly">
-                  <div className="booking-container">
-                    <h4 className="movie-title">{booking.movieTitle}</h4>
-                    <img src={booking.moviePicture} className="card-img-top" alt={booking.title} />
-                    <p className="booked-date">{booking.bookedDate}</p>
-                    <p className="city-name">{booking.cityName}</p>
+              <div className="col-4" key={booking.bookingId}>
+                <div className="col-12">
+                  <div className="card mt-4">
+                    <div className="card-body">
+                      <img src={booking.moviePicture} className="booking-img" alt={booking.title} />
+                      <h6 className="movie-title">{booking.movieTitle}</h6>
+                      <p className="booked-date">{booking.bookedDate}</p>
+                      <p className="city-name">{booking.cityName}</p>
+                      <button type="submit" onClick={(e) => deleteBookedMovie(e, booking.bookingId)} className="delete-booking">Cancel</button>
+                    </div>
                   </div>
                 </div>
               </div>

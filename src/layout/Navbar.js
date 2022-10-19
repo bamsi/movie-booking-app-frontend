@@ -45,22 +45,6 @@ const Navbar = () => {
                 Latest Movies
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={(navData) => (navData.isActive ? 'active link' : 'link')}
-                to="/genres"
-              >
-                Genres
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={(navData) => (navData.isActive ? 'active link' : 'link')}
-                to="/trending_movies"
-              >
-                Trending Movies
-              </NavLink>
-            </li>
             {
               loggedIn() === true
                 ? (

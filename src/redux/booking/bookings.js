@@ -1,5 +1,6 @@
 const FETCH_BOOKINGS = 'booking/bookings/FETCH_BOOKINGS';
 const BOOK_MOVIE = 'booking/bookings/BOOK_MOVIE';
+const DELETE_MOVIE = 'booking/bookings/DELETE_MOVIE';
 
 const baseUrl = 'http://127.0.0.1:3000/api/v1';
 
@@ -15,6 +16,11 @@ const fetchAllBookings = (data) => ({
 const createBooking = (data) => ({
   type: BOOK_MOVIE,
   data,
+});
+
+const destroyBookings = (id) => ({
+  type: DELETE_MOVIE,
+  id,
 });
 
 const fetchBookings = (userId) => async (dispatch) => {
@@ -72,6 +78,26 @@ const makeBooking = (payload) => async (dispatch) => {
   }
 };
 
+const deleteBooking = (userId, payload) => async (dispatch) => {
+  const requestConfig = {
+    url: `${baseUrl}/users/${userId}/bookings/${payload}`,
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const response = await fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  });
+  const obj = await response.json();
+  if (response.ok) {
+    dispatch(destroyBookings(obj));
+  }
+};
+
 const bookings = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_BOOKINGS:
@@ -82,10 +108,14 @@ const bookings = (state = initialState, action) => {
       return {
         list: [...state.list, action.data],
       };
+    case DELETE_MOVIE:
+      return {
+        list: [state.list.filter((booking) => booking.bookingId !== action.payload.id)],
+      };
     default:
       return state;
   }
 };
 
-export { fetchBookings, makeBooking };
+export { fetchBookings, makeBooking, deleteBooking };
 export default bookings;
