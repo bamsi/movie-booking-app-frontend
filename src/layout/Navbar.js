@@ -19,6 +19,7 @@ const Navbar = () => {
 
   const logOut = useCallback(() => {
     dispatch(logout());
+    window.location.reload();
   }, [dispatch]);
 
   if (classValue === 'hide') {
