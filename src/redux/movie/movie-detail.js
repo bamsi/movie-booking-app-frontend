@@ -10,7 +10,7 @@ const movie = (state = {}, { type, payload }) => {
   switch (type) {
     case SELECTED_MOVIE:
       return {
-        state, payload,
+        ...state, ...payload,
       };
     default:
       return state;

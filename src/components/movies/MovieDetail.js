@@ -6,17 +6,17 @@ import { selectMovie } from '../../redux/movie/movie-detail';
 
 function MovieDetail() {
   const movie = useSelector((state) => state.movie);
-  console.log(movie.payload);
+  console.log(movie);
   const movieId = useParams();
   const dispatch = useDispatch();
-  console.log(movieId.movieId);
+  // console.log(movieId.movieId);
 
   const fetchMovie = async () => {
     const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`).catch((err) => {
       console.log('Error', err);
     });
     dispatch(selectMovie(response.data));
-    console.log(response.data);
+    // console.log(response.data);
   };
 
   useEffect(() => {
@@ -24,7 +24,10 @@ function MovieDetail() {
   }, []);
 
   return (
-    <div>MovieDetail</div>
+    <div>
+      MovieDetail
+      <h1>hello</h1>
+    </div>
   );
 }
 
