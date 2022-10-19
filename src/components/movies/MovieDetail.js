@@ -77,8 +77,8 @@ function MovieDetail() {
                 <strong>(87 votes)</strong>
               </p>
               <div className="action">
-                <Link to="/home">
-                  <button className="add-to-cart btn btn-default" type="button">Back To Movies</button>
+                <Link to="/reserve_page">
+                  <button className="add-to-cart btn btn-default" type="button">Reserve</button>
                 </Link>
               </div>
             </div>
