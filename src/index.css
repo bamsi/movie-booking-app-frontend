@@ -32,7 +32,7 @@ body {
 }
 
 .navbar {
-  width: 380px;
+  width: 330px;
   height: 100vh;
   border-right: 0.4px solid rgba(142, 142, 142, 0.2);
   display: block;
@@ -73,7 +73,7 @@ body {
   color: #333;
   text-transform: uppercase;
   width: 100%;
-  font-size: 40px;
+  font-size: 27px;
   padding-left: 25px;
 }
 
@@ -146,5 +146,4 @@ body {
 
 .main-section {
   width: 100% !important;
-  /* margin-left: -60px; */
 }

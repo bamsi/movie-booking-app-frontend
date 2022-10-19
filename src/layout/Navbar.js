@@ -7,7 +7,7 @@ import SocialMedia from '../asserts/social_media.png';
 import { loggedIn, logout } from '../redux/authentication/authentication';
 
 const Navbar = () => {
-  const [classValue, setClassValue] = useState('hide');
+  const [classValue, setClassValue] = useState('show');
   const dispatch = useDispatch();
   const toggleMenu = () => {
     if (classValue === 'show') {
@@ -39,7 +39,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 className={(navData) => (navData.isActive ? 'active link' : 'link')}
-                to="/"
+                to="/home"
               >
                 Latest Movies
               </NavLink>
@@ -60,18 +60,26 @@ const Navbar = () => {
                 Trending Movies
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={(navData) => (navData.isActive ? 'active link' : 'link')}
-                to="/new_booking"
-              >
-                New Booking
-              </NavLink>
-            </li>
             {
-              loggedIn === true
+              loggedIn() === true
                 ? (
                   <div>
+                    <li>
+                      <NavLink
+                        className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                        to="/new_booking"
+                      >
+                        New Booking
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                        to="/bookings"
+                      >
+                        Bookings
+                      </NavLink>
+                    </li>
                     <li>
                       <NavLink
                         className={(navData) => (navData.isActive ? 'active link' : 'link')}
@@ -88,14 +96,37 @@ const Navbar = () => {
                         Delete A Movie
                       </NavLink>
                     </li>
+                    <li className="nav-logout">
+                      <a href="/" className="nav-link" onClick={logOut}>
+                        LogOut
+                      </a>
+                    </li>
                   </div>
                 ) : null
             }
-            <li className="nav-logout">
-              <a href="/" className="nav-link text-white" onClick={logOut}>
-                LogOut
-              </a>
-            </li>
+            {
+              loggedIn() === false
+                ? (
+                  <>
+                    <li>
+                      <NavLink
+                        className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                        to="/login"
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className={(navData) => (navData.isActive ? 'active link' : 'link')}
+                        to="/signup"
+                      >
+                        Signup
+                      </NavLink>
+                    </li>
+                  </>
+                ) : null
+            }
           </ul>
         </div>
         <img src={SocialMedia} className="social_media" alt="social_media" />
