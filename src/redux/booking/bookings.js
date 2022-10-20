@@ -78,13 +78,14 @@ const makeBooking = (payload) => async (dispatch) => {
   }
 };
 
-const deleteBooking = (userId, payload) => async (dispatch) => {
+const deleteBooking = (payload, userId) => async (dispatch) => {
   const requestConfig = {
     url: `${baseUrl}/users/${userId}/bookings/${payload}`,
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
+    body: payload,
   };
 
   const response = await fetch(requestConfig.url, {
@@ -110,7 +111,7 @@ const bookings = (state = initialState, action) => {
       };
     case DELETE_MOVIE:
       return {
-        list: [state.list.filter((booking) => booking.bookingId !== action.payload.id)],
+        list: [state.filter((booking) => booking.bookingId !== action.payload.id)],
       };
     default:
       return state;

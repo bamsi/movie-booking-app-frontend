@@ -62,9 +62,18 @@ function NewBooking() {
   };
 
   return (
-    <div>
-      NewBooking
-      <div className="d-flex aligns-items-center justify-content-center h-100 d-inline-block">
+    <div className="new-booking-container">
+      <h2 className="my-bookings pt-5 mb-3 text-center form-heading">BOOK A MOVIE TO WATCH</h2>
+      <hr
+        style={{
+          color: 'grey',
+          height: '2px',
+          width: '80%',
+          margin: '0 auto',
+        }}
+      />
+      <p className="form-p mt-5">The story revolves around Vandiyadevan, a charming, brave and a brilliant young man who sets the Chola land to deliver a message to the King and the Princess from the Crown Prince Aditya Karikala.</p>
+      <div className="d-flex aligns-items-center justify-content-center mt-5 d-inline-block">
         <div className="card align-self-center p-4" style={{ width: '28rem' }}>
           {error && (
             <div className="alert alert-danger" role="alert">
@@ -109,7 +118,7 @@ function NewBooking() {
               />
             </div>
             <button type="submit" className="btn btn-primary">
-              Submit
+              BOOK A MOVIE
             </button>
           </form>
           <div className="align-self-end">

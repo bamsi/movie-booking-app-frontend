@@ -7,7 +7,7 @@ import SocialMedia from '../asserts/social_media.png';
 import { loggedIn, logout } from '../redux/authentication/authentication';
 
 const Navbar = () => {
-  const [classValue, setClassValue] = useState('show');
+  const [classValue, setClassValue] = useState('hide');
   const dispatch = useDispatch();
   const toggleMenu = () => {
     if (classValue === 'show') {
@@ -24,7 +24,9 @@ const Navbar = () => {
 
   if (classValue === 'hide') {
     return (
-      <div className="bars" onClick={() => toggleMenu()} role="presentation"><i className="fa fa-bars bars3" /></div>
+      <div className="bars" onClick={() => toggleMenu()} role="presentation">
+        <i className="fa fa-bars bars3" />
+      </div>
     );
   }
   return (
@@ -117,7 +119,10 @@ const Navbar = () => {
         <img src={SocialMedia} className="social_media" alt="social_media" />
       </nav>
       <div className="close-btn-container">
-        <GiTriangleTarget className="close-arrow" onClick={() => toggleMenu()} />
+        <GiTriangleTarget
+          className="close-arrow"
+          onClick={() => toggleMenu()}
+        />
       </div>
     </div>
   );
