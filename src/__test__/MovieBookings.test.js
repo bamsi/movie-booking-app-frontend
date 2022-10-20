@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
 import MovieBookings from '../components/bookings/MovieBookings';
-import { Route } from 'react-router';
 
 const user ={
     user: {

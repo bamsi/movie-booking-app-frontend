@@ -22,7 +22,7 @@ function NewBooking() {
     city: '',
     date: new Date(),
     movie_id: '',
-    user_id: user.user.id,
+    user_id: user?.user?.id,
   });
 
   const handleCityChange = (e) => {
