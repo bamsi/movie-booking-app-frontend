@@ -37,6 +37,7 @@ const Login = () => {
         setError('Invalid username and password');
       } else {
         navigate('/home');
+        window.location.reload();
       }
     });
   };

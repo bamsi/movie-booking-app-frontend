@@ -9,6 +9,7 @@ import authentication from './authentication/authentication';
 import movies from './movie/movies';
 import categories from './category/categories';
 import genres from './genre/genres';
+import bookings from './booking/bookings';
 import movie from './movie/movie-detail';
 
 const rootReducer = combineReducers({
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   movies,
   categories,
   genres,
+  bookings,
   movie,
 });
 

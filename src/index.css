@@ -22,6 +22,10 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 /* navbar */
 
 .sidebar-container {
@@ -32,9 +36,8 @@ body {
 }
 
 .navbar {
-  width: 380px;
+  width: 330px;
   height: 100vh;
-  border-right: 0.4px solid rgba(142, 142, 142, 0.2);
   display: block;
   top: 0;
   left: 0;
@@ -49,6 +52,7 @@ body {
 }
 
 .links-container {
+  height: 60vh;
   margin-top: 3rem;
 }
 
@@ -73,7 +77,7 @@ body {
   color: #333;
   text-transform: uppercase;
   width: 100%;
-  font-size: 40px;
+  font-size: 27px;
   padding-left: 25px;
 }
 
@@ -81,12 +85,12 @@ body {
   text-align: end;
   background: #97bf0f;
   width: 60px;
-  padding: 15px;
+  padding: 10px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   position: fixed;
-  bottom: 8rem;
-  left: 380px;
+  bottom: 5rem;
+  left: 330px;
   cursor: pointer;
   z-index: 1;
 }
@@ -126,8 +130,7 @@ body {
 }
 
 .social_media {
-  position: absolute;
-  bottom: 25px;
+  width: 80%;
 }
 
 .link:hover {
@@ -167,8 +170,109 @@ body {
   text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* New Bookings */
+.booking-img {
+  width: 100%;
+}
+
+.booking-box {
+  margin: 0 auto;
+}
+
+.delete-booking {
+  background: #97bf0f;
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+}
+
+.booking-container {
+  padding: 0 50px 0 50px;
+}
+
+.my-bookings {
+  font-weight: 700;
+}
+
+.movie-title {
+  font-weight: 700;
+}
+
+/* New booking form */
+.card {
+  width: 100%;
+
+  --bs-card-border-width: 0;
+}
+
+.form-p {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  color: white;
+}
+
+.form-heading {
+  color: #fff;
+}
+
+.new-booking-container {
+  background-image: url("./asserts/form-backgroung.png");
+  height: 115vh;
+  width: 100%;
+}
+
+/* End of new booking form */
+
 /* App styling */
 
 .main-container {
   display: flex;
+}
+
+.main-section {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* App end */
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    display: block;
+  }
+
+  .close-btn-container {
+    border-radius: 50px;
+    position: fixed;
+    bottom: 12rem;
+    left: 380px;
+  }
+
+  .sidebar-container {
+    text-align: center;
+  }
+
+  .navbar {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    background: white;
+  }
+
+  .links-container {
+    height: 45vh;
+  }
+
+  .social_media {
+    width: 65%;
+  }
+
+  .bars {
+    z-index: 1;
+  }
 }
