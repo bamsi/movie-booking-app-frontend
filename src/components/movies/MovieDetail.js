@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { selectMovie } from '../../redux/movie/movie-detail';
+import { getMovieDetails } from '../../redux/movie/movie-detail';
 import './movieDetail.css';
 
 function MovieDetail() {
@@ -11,13 +10,8 @@ function MovieDetail() {
   const movieId = useParams();
   const dispatch = useDispatch();
 
-  const fetchMovie = async () => {
-    const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`);
-    dispatch(selectMovie(...response.data));
-  };
-
   useEffect(() => {
-    fetchMovie();
+    dispatch(getMovieDetails(movieId.movieId));
   }, []);
 
   return (
@@ -26,22 +20,13 @@ function MovieDetail() {
         <div className="container-fliud">
           <div className="wrapper row">
             <div className="preview col-md-6">
-
               <div className="preview-pic tab-content">
-                <div className="tab-pane active" id="pic-1"><img src={movie.picture} alt={movie.title} /></div>
-                <div className="tab-pane" id="pic-2"><img src={movie.picture} alt={movie.title} /></div>
-                <div className="tab-pane" id="pic-3"><img src={movie.picture} alt={movie.title} /></div>
-                <div className="tab-pane" id="pic-4"><img src={movie.picture} alt={movie.title} /></div>
-                <div className="tab-pane" id="pic-5"><img src={movie.picture} alt={movie.title} /></div>
+                <img
+                  src={movie.picture}
+                  alt={movie.title}
+                  className="img-fluid"
+                />
               </div>
-              <ul className="preview-thumbnail nav nav-tabs">
-                <li className="active"><a href="hi" data-target="#pic-1" data-toggle="tab"><img src={movie.picture} alt={movie.title} /></a></li>
-                <li><a href="hi" data-target="#pic-2" data-toggle="tab"><img src={movie.picture} alt={movie.title} /></a></li>
-                <li><a href="hi" data-target="#pic-3" data-toggle="tab"><img src={movie.picture} alt={movie.title} /></a></li>
-                <li><a href="hi" data-target="#pic-4" data-toggle="tab"><img src={movie.picture} alt={movie.title} /></a></li>
-                <li><a href="hi" data-target="#pic-5" data-toggle="tab"><img src={movie.picture} alt={movie.title} /></a></li>
-              </ul>
-
             </div>
             <div className="details col-md-6">
               <h3 className="product-title">{movie.title}</h3>
@@ -54,16 +39,13 @@ function MovieDetail() {
                   <span className="fa fa-star" />
                 </div>
                 <h4 className="review-no">
-
                   Time:
                   {movie.time}
                 </h4>
                 <h4 className="review-no">
-
                   Duration:
                   {movie.duration}
                 </h4>
-
               </div>
               <p className="product-description">{movie.description}</p>
               <p className="vote">
@@ -73,7 +55,9 @@ function MovieDetail() {
               </p>
               <div className="action">
                 <Link to="/reserve_page">
-                  <button className="add-to-cart btn btn-default" type="button">Reserve</button>
+                  <button className="add-to-cart btn btn-default" type="button">
+                    Reserve
+                  </button>
                 </Link>
               </div>
             </div>
