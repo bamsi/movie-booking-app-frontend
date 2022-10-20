@@ -3,9 +3,11 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 > Biskop is a movie booking app that allows a user to signup and login. Add movies or book available movie from the list. This app was built with react redux for the frontend along with rails for backend.
 
+Live Demo: `https://exquisite-marigold-3a82c1.netlify.app/`
+
 >Here is a link to the source code of the backend `https://github.com/HSMathebula/movie-booking-app-back-end`
 
-![pages](./asserts/Movie Bisko.png)
+<img src="./asserts/Movie Bisko.png"/>
 Things you may want to cover:
 ## Built With
 
