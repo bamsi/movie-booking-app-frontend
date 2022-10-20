@@ -31,7 +31,7 @@ const AddMovie = () => {
     category_id: '',
     genre_id: '',
     picture: '',
-    user_id: user.user.id,
+    user_id: user?.user?.id,
   });
 
   const handleTitleChange = (e) => {
