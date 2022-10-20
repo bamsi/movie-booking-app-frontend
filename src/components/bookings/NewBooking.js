@@ -58,7 +58,6 @@ function NewBooking() {
       dispatch(makeBooking(values));
     }
     navigate('/bookings');
-    window.location.reload();
   };
 
   return (
