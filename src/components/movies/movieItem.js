@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const MovieItem = ({
   id, title, description, picture,
 }) => (
-  <Link to="/movie_detail/" className="text-decoration-none text-dark" params={{ id }}>
+  <Link to={`/movie/${id}`} className="text-decoration-none text-dark">
     <div className="card">
       <img src={picture} className="card-img-top" alt={title} />
       <div className="card-body text-center">
