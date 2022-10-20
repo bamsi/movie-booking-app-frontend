@@ -108,7 +108,7 @@ exports[`testing the rendering of the new booking page  1`] = `
                 <input
                   class="form-control"
                   type="text"
-                  value="10/20/2022, 5:56 PM"
+                  value="10/20/2022, 6:15 PM"
                 />
               </div>
             </div>

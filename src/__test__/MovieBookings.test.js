@@ -4,12 +4,6 @@ import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
 import MovieBookings from '../components/bookings/MovieBookings';
 
-const user ={
-    user: {
-        id: 1,
-        name: 'happen'
-    }
-}
 const bookings = [
   {
     bookedDate: '2022-02-02',
