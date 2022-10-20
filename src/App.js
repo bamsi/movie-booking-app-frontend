@@ -6,6 +6,7 @@ import Navbar from './layout/Navbar';
 import Main from './components/movies/main';
 import AddMovie from './components/movies/addMovie';
 import MovieDetail from './components/movies/MovieDetail';
+import DeleteMovie from './components/movies/deleteMovie';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/home" element={<Main />} />
           <Route path="/add_movie" element={<AddMovie />} />
           <Route path="/movie/:movieId" element={<MovieDetail />} />
-
+          <Route path="/delete_movie" element={<DeleteMovie />} />
         </Routes>
       </div>
     </div>
