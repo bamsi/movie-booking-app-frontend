@@ -25,7 +25,9 @@ const Navbar = () => {
   if (classValue === 'hide') {
     return (
       <div className="bars" onClick={() => toggleMenu()} role="presentation">
+
         <i className="fa fa-bars bars3" />
+
       </div>
     );
   }

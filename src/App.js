@@ -8,6 +8,7 @@ import AddMovie from './components/movies/addMovie';
 import MovieBookings from './components/bookings/MovieBookings';
 import NewBooking from './components/bookings/NewBooking';
 import MovieDetail from './components/movies/MovieDetail';
+import DeleteMovie from './components/movies/deleteMovie';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/bookings" element={<MovieBookings />} />
           <Route path="/new_booking" element={<NewBooking />} />
           <Route path="/movie_detail" element={<MovieDetail />} />
+          <Route path="/movie/:movieId" element={<MovieDetail />} />
+          <Route path="/delete_movie" element={<DeleteMovie />} />
         </Routes>
       </div>
     </div>

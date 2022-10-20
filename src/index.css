@@ -147,7 +147,6 @@ p {
 .bars {
   padding: 40px 0 0 55px;
   position: absolute;
-  
 }
 
 .bars3 {
@@ -200,9 +199,11 @@ p {
 .movie-title {
   font-weight: 700;
 }
+
 /* New booking form */
 .card {
   width: 100%;
+
   --bs-card-border-width: 0;
 }
 
@@ -222,6 +223,7 @@ p {
   height: 100vh;
   width: 100%;
 }
+
 /* End of new booking form */
 
 /* App styling */

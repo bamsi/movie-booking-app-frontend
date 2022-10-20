@@ -10,6 +10,7 @@ import movies from './movie/movies';
 import categories from './category/categories';
 import genres from './genre/genres';
 import bookings from './booking/bookings';
+import movie from './movie/movie-detail';
 
 const rootReducer = combineReducers({
   authentication,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   categories,
   genres,
   bookings,
+  movie,
 });
 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
