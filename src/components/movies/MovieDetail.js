@@ -8,17 +8,12 @@ import './movieDetail.css';
 
 function MovieDetail() {
   const movie = useSelector((state) => state.movie);
-  // console.log(movie);
   const movieId = useParams();
   const dispatch = useDispatch();
-  // console.log(movieId.movieId);
 
   const fetchMovie = async () => {
-    const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`).catch((err) => {
-      console.log('Error', err);
-    });
+    const response = await axios.get(`http://127.0.0.1:3000/api/v1/movies/${movieId.movieId}`);
     dispatch(selectMovie(...response.data));
-    // console.log(...response.data);
   };
 
   useEffect(() => {

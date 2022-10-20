@@ -6,7 +6,6 @@ export const selectMovie = (movie) => ({
 });
 
 const movie = (state = {}, { type, payload }) => {
-  // console.log(payload);
   switch (type) {
     case SELECTED_MOVIE:
       return {
