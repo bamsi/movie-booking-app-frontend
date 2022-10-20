@@ -7,7 +7,7 @@ function MovieBookings() {
   const bookings = useSelector((state) => state.bookings.list);
 
   const user = getCurrentUser();
-  const userId = user.user.id;
+  const userId = user?.user?.id;
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -37,7 +37,7 @@ function MovieBookings() {
                 <div className="col-lg-12 col-md-12">
                   <div className="card mt-4">
                     <div className="card-body">
-                      <img src={booking.moviePicture} className="booking-img" alt={booking.title} />
+                      <img src={booking.moviePicture} className="booking-img" alt={booking.movieTitle} />
                       <h6 className="movie-title">{booking.movieTitle}</h6>
                       <p className="booked-date">{booking.bookedDate}</p>
                       <p className="city-name">{booking.cityName}</p>

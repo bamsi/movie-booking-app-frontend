@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the rendering of the movie bookings page  1`] = `
+<div>
+  <div
+    class="booking-container container"
+  >
+    <div
+      class="px-5 pb-2 text-center booking-heading mt-5"
+    >
+      <h2
+        class="my-bookings"
+      >
+        My Bookings
+      </h2>
+    </div>
+    <h2
+      class="not-found-notice mt-5 text-center"
+    >
+      No booked movies
+    </h2>
+  </div>
+</div>
+`;

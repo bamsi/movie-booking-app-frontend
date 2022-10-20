@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing the rendering of the add movie page  1`] = `
+exports[`testing the rendering of the new booking page  1`] = `
 <div>
   <div
     class="container pt-5"
