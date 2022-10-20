@@ -2,7 +2,7 @@ const FETCH_BOOKINGS = 'booking/bookings/FETCH_BOOKINGS';
 const BOOK_MOVIE = 'booking/bookings/BOOK_MOVIE';
 const DELETE_MOVIE = 'booking/bookings/DELETE_MOVIE';
 
-const baseUrl = 'http://127.0.0.1:3000/api/v1';
+const baseUrl = 'https://moviebiskop.herokuapp.com/api/v1';
 
 const initialState = {
   list: [],
@@ -111,7 +111,9 @@ const bookings = (state = initialState, action) => {
       };
     case DELETE_MOVIE:
       return {
-        list: [state.filter((booking) => booking.bookingId !== action.payload.id)],
+        list: [
+          state.filter((booking) => booking.bookingId !== action.payload.id),
+        ],
       };
     default:
       return state;

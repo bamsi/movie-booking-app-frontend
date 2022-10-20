@@ -6,7 +6,7 @@ const initialState = {
   next_page: null,
 };
 
-const baseUrl = 'http://127.0.0.1:3000/api/v1';
+const baseUrl = 'https://moviebiskop.herokuapp.com/api/v1';
 
 const fetchMoviesSuccess = (data) => ({
   type: FETCH_MOVIES,

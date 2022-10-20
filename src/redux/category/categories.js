@@ -4,7 +4,7 @@ const initialState = {
   list: [],
 };
 
-const baseUrl = 'http://127.0.0.1:3000/api/v1';
+const baseUrl = 'https://moviebiskop.herokuapp.com/api/v1';
 
 const fetchCategoriesSuccess = (data) => ({
   type: FETCH_CATEGORIES,

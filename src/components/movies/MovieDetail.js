@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getMovieDetails } from '../../redux/movie/movie-detail';
 import './movieDetail.css';
 
 function MovieDetail() {
+  const navigate = useNavigate();
   const movie = useSelector((state) => state.movie);
   const movieId = useParams();
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ function MovieDetail() {
   useEffect(() => {
     dispatch(getMovieDetails(movieId.movieId));
   }, []);
+
+  const reserve = () => {
+    navigate('/new_booking');
+  };
 
   return (
     <div className="container">
@@ -54,11 +59,13 @@ function MovieDetail() {
                 <strong>(87 votes)</strong>
               </p>
               <div className="action">
-                <Link to="/reserve_page">
-                  <button className="add-to-cart btn btn-default" type="button">
-                    Reserve
-                  </button>
-                </Link>
+                <button
+                  className="add-to-cart btn btn-default"
+                  type="button"
+                  onClick={() => reserve()}
+                >
+                  Reserve
+                </button>
               </div>
             </div>
           </div>

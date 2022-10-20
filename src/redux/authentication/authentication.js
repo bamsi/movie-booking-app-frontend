@@ -4,7 +4,7 @@ const initialState = {
   user: {},
 };
 
-const baseUrl = 'http://127.0.0.1:3000/api/v1';
+const baseUrl = 'https://moviebiskop.herokuapp.com/api/v1';
 
 const readUser = () => (localStorage.getItem('user')
   ? JSON.parse(localStorage.getItem('user'))
@@ -71,7 +71,7 @@ const signup = async (payload) => {
     headers: requestConfig.headers,
     body: JSON.stringify(requestConfig.body),
   });
-  const obj = response.json();
+  const obj = await response.json();
   if (response.ok) {
     localStorage.setItem('user', JSON.stringify(obj));
   }
