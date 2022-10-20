@@ -65,5 +65,23 @@ const addMovie = async (payload) => {
   return { status: response.status, data: obj };
 };
 
-export { fetchMovies, addMovie };
+const deleteMovie = async (movieId) => {
+  const requestConfig = {
+    url: `${baseUrl}/movies/${movieId}`,
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const response = await fetch(requestConfig.url, {
+    method: requestConfig.method,
+    headers: requestConfig.headers,
+    body: JSON.stringify(requestConfig.body),
+  });
+  const obj = await response.json();
+  return { status: response.status, data: obj };
+};
+
+export { fetchMovies, addMovie, deleteMovie };
 export default movies;
