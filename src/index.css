@@ -1,13 +1,278 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&family=Passion+One&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300;400;700&family=Joti+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&family=Montserrat:wght@400;500;900&display=swap');
+
+:root {
+  --light-green: #97bf0f;
+  --blue: #48bab5;
+  --dark-green: #617c00;
+  --grey: #333;
+  --orange: #f5c702;
+  --black: #111;
+  --main-white: #fff;
+  --main-font: 'Popinss';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* navbar */
+
+.sidebar-container {
+  display: flex;
+  align-items: flex-end;
+
+  /* position: absolute; */
+}
+
+.navbar {
+  width: 330px;
+  height: 100vh;
+  display: block;
+  top: 0;
+  left: 0;
+  padding-left: 55px;
+  position: relative;
+  background: white;
+}
+
+.logo {
+  width: 15rem;
+  margin-top: 2rem;
+}
+
+.links-container {
+  height: 60vh;
+  margin-top: 3rem;
+}
+
+.links-container > ul {
+  padding: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+.nav-logout li a {
+  color: #fff !important;
+}
+
+.navbar ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Passion One', cursive;
+  font-weight: 400;
+  color: #333;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 27px;
+  padding-left: 25px;
+}
+
+.close-btn-container {
+  text-align: end;
+  background: #97bf0f;
+  width: 60px;
+  padding: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  position: fixed;
+  bottom: 5rem;
+  left: 330px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.close-arrow {
+  transform: rotate(30deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.next-button {
+  transform: rotate(90deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.prev-button {
+  transform: rotate(30deg);
+  width: 25px;
+  height: 25px;
+  color: white;
+  margin-top: -10px;
+}
+
+.arrow-container {
+  text-align: end;
+  width: 60px;
+  height: 50px;
+  padding: 15px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #838482;
+}
+
+.social_media {
+  width: 80%;
+}
+
+.link:hover {
+  color: var(--dark-green);
+  background-color: #dddddc;
+}
+
+.active {
+  background-color: var(--light-green);
+  color: var(--main-white) !important;
+  cursor: pointer;
+}
+
+.bars {
+  padding: 40px 0 0 55px;
+  position: absolute;
+}
+
+.bars3 {
+  font-size: 35px;
+  color: #97bf0f;
+}
+
+.container-img {
+  background: url('../src/asserts/home_bg.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Joti One', cursive;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7rem;
+  color: #fff;
+  text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* New Bookings */
+.booking-img {
+  width: 100%;
+}
+
+.booking-box {
+  margin: 0 auto;
+}
+
+.delete-booking {
+  background: #97bf0f;
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+}
+
+.booking-container {
+  padding: 0 50px 0 50px;
+}
+
+.my-bookings {
+  font-weight: 700;
+}
+
+.movie-title {
+  font-weight: 700;
+}
+
+/* New booking form */
+.card {
+  width: 100%;
+
+  --bs-card-border-width: 0;
+}
+
+.form-p {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  color: white;
+}
+
+.form-heading {
+  color: #fff;
+}
+
+.new-booking-container {
+  background-image: url("./asserts/form-backgroung.png");
+  height: 115vh;
+  width: 100%;
+}
+
+/* End of new booking form */
+
+/* App styling */
+
+.main-container {
+  display: flex;
+}
+
+.main-section {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* App end */
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    display: block;
+  }
+
+  .close-btn-container {
+    border-radius: 50px;
+    position: fixed;
+    bottom: 12rem;
+    left: 380px;
+  }
+
+  .sidebar-container {
+    text-align: center;
+  }
+
+  .navbar {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-left: 0;
+    background: white;
+  }
+
+  .links-container {
+    height: 45vh;
+  }
+
+  .social_media {
+    width: 65%;
+  }
+
+  .bars {
+    z-index: 1;
+  }
 }

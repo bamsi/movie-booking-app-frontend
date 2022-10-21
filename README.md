@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+## Movie Biskop
+This README would normally document whatever steps are necessary to get the
+application up and running.
+> Biskop is a movie booking app that allows a user to signup and login. Add movies or book available movie from the list. This app was built with react redux for the frontend along with rails for backend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Demo: `https://exquisite-marigold-3a82c1.netlify.app/`
 
-## Available Scripts
+>Here is a link to the source code of the backend `https://github.com/HSMathebula/movie-booking-app-back-end`
 
-In the project directory, you can run:
+<img src="./src/asserts/Movie Bisko.png"/>
+Things you may want to cover:
+## Built With
 
-### `npm start`
+- React
+- Redux
+- Ruby on Rails
+- PostgreSQL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* System dependencies
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Configuration
+To get a local copy up and running follow these simple example steps.
 
-### `npm test`
+* Database creation
+1- Clone `git clone https://github.com/HSMathebula/movie-booking-app-back-end.git` <br>
+2- In your terminal go to the project name by `cd movie-booking-app-back-end`. <br>
+3- Run`npm install`. <br>
+4- Run `npm start` to open app locally.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Database initialization
+To setup linters on your local environment, please follow these steps.
 
-### `npm run build`
+* How to run the test suite
+1- Run `eslint . --fix` for the errors.
+1- Run `npx stylelint "**/*.{css,scss}" --fix` for the errors.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Services (job queues, cache servers, search engines, etc.)
+To run the tests <br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* ...
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+IDE(VSCode etc.), WSL(for Windows OS)
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Happen Mathebula**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- GitHub: [@HSMathebula](https://github.com/HSMathebula)
+- Twitter: [@happen_sipho](https://twitter.com/HappenSipho)
+- LinkedIn: [@happen-sipho-mathebula](www.linkedin.com/in/happen-sipho-mathebula)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Ilham Bouaik**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- GitHub : [@bouaik ilham](https://github.com/BouaikIlham)
+- Twitter: [@IlhamBouaik](https://twitter.com/IlhamBouaik)
+- LinkedIn: [@BouaikIlham](https://www.linkedin.com/in/bouaik-ilham-478478230/)
 
-## Learn More
+👤 **Haji Bamsi**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@bamsi](https://github.com/bamsi)
+- Twitter: [@bamsi](https://twitter.com/haji-bamsi-17327728/)
+- LinkedIn: [@bamsi](https://linkedin.com/in/bamsi)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Attributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This web design was inspired by [Gregoire Vella](https://www.behance.net/gregoirevella)
+on [this idea](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions, issues, and feature requests are welcome!
 
-### Making a Progressive Web App
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Show your support
 
-### Advanced Configuration
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
+-Thank you to Microverse Inc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE.md) licensed.
