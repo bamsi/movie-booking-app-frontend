@@ -15,7 +15,7 @@ const Signup = () => {
   const submitRequest = (event) => {
     event.preventDefault();
     const payload = {
-      name: values.username,
+      name: values.username.toLowerCase(),
       password: values.password,
     };
     if (values.password === values.retypePassword) {

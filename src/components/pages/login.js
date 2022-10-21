@@ -29,7 +29,7 @@ const Login = () => {
     event.preventDefault();
 
     const response = login({
-      name: values.username,
+      name: values.username.toLowerCase(),
       password: values.password,
     });
     response.then((response) => {
